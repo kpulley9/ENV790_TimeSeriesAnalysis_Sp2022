@@ -1,7 +1,7 @@
 # ENVIRON790.30 Time Series Analysis for Energy Data
 
 Course repository for Time Series Analysis at Duke University, spring 2022
-
+Name: Kristen Pulley
 
 **Meeting time:** MW 12:00 to 1:15 pm
 
