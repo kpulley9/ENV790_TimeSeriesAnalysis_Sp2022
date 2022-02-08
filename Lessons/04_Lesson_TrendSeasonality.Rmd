@@ -4,7 +4,11 @@ author: "Luana Lima"
 date: "01/26/2022"
 output: pdf_document
 editor_options: 
+<<<<<<< HEAD
   chunk_output_type: inline
+=======
+  chunk_output_type: console
+>>>>>>> cb07cb7157b7cdc6f2d6864eadd24dadc04e0f32
 ---
 
 ## Setting R code chunk options
@@ -12,7 +16,7 @@ editor_options:
 First R code chunk is used for setting the options for all R code chunks. The choice echo=TRUE means both code and output will appear on report, include = FALSE neither code nor output is printed.
 
 ```{r setup, include=FALSE} 
-knitr::opts_chunk$set(echo = TRUE) #,tidy.opts=list(width.cutoff=80), tidy=FALSE) 
+knitr::opts_chunk$set(echo = TRUE,tidy.opts=list(width.cutoff=80), tidy=FALSE) 
 ```
 
 ## Loading packages and initializing
