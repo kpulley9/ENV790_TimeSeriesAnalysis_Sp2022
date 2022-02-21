@@ -41,7 +41,7 @@ Consider the same data you used for A3 from the spreadsheet "Table_10.1_Renewabl
 
 
 ```{r setup, include=FALSE}
-ogdata <- read_excel("Data/Table_10.1_Renewable_Energy_Production_and_Consumption_by_Source.xlsx")
+ogdata <- read_excel(path="Table_10.1_Renewable_Energy_Production_and_Consumption_by_Source.xlsx")
 
 energy.df<-data.frame(ogdata[, c(1,5)])
 names(energy.df)<-c('Date','TotalRenewableEnergyProduction')
@@ -140,7 +140,7 @@ Based on the ACFs, the differencing seems to have eliminated the trend most effi
 ```{r, compare ACFs, echo=FALSE}
 #Compare ACFs
 ts_og<-ts(energy.df[,1], frequency = 12)
-ts_detrend<-ts(detrend.renew.df, frequency = 12)
+ts_detrend<-ts(energyplusdetrend[,3], frequency = 12)
 
 par(mfrow=c(1,3))
   acf(ts_og,lag.max=40,ylim=c(-0.5,1),)
@@ -205,22 +205,22 @@ print(summary(MannKendall(energy_data_yearly)))
 ### Spearman Correlation test 
 
 #Deterministic trend with Spearman Correlation Test
-print("Results from Spearman Correlation")
-sp_rho=cor(energy_data_yearly,my_year[1:576,],method="spearman")
-print(sp_rho)
+#print("Results from Spearman Correlation")
+#sp_rho=cor(energy_data_yearly,my_year[1:576,],method="spearman")
+#print(sp_rho)
 
 #with cor.test you can get test statistics
-sp_rho=cor.test(energy_data_yearly,my_year,method="spearman")
-print(sp_rho)
+#sp_rho=cor.test(energy_data_yearly,my_year,method="spearman")
+#print(sp_rho)
 
 ### Augmented Dickey Fuller (ADF)
 
 #Null hypothesis is that data has a unit root
-print("Results for ADF test/n")
-print(adf.test(ts_og2,alternative = "stationary"))
+#print("Results for ADF test/n")
+#print(adf.test(ts_og2,alternative = "stationary"))
 
 #Now let's try the yearly data
-print("Results for ADF test on yearly data/n")
-print(adf.test(energy_data_yearly, alternative = "stationary"))
+#print("Results for ADF test on yearly data/n")
+#print(adf.test(energy_data_yearly, alternative = "stationary"))
 ```
 
