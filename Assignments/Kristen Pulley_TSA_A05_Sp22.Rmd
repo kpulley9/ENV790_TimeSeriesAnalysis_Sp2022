@@ -152,6 +152,6 @@ plot(decompsun_new)
 plot(decompwind_new)
 ```
 
-> Answer: The random component looks a lot more random compared to the graphs above. There is less of a seasonality trend evident in that component. Because I identified the outliers prior to 2012 as a level shift, filtering them out has probably done more to avpid distorting the seasonal component, so that the data may be forecasted accurately. 
+> Answer: The random component looks a lot more random compared to the graphs above. There is less of a seasonality trend evident in that component. Because I identified the outliers prior to 2012 as a level shift, filtering them out has probably done more to avoid distorting the seasonal component, so that the data may be forecasted accurately. 
 
 
